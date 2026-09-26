@@ -23,3 +23,8 @@ export enum VisitorStatus {
   InGallery = 'InGallery',
   Left = 'Left',
 }
+
+export enum VisitorSource {
+  Local = 'Local',
+  Preset = 'Preset',
+}

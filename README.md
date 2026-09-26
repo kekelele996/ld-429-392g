@@ -27,7 +27,7 @@ npm run dev
 - `/exhibitions`：展览列表，展示展览状态、策展人和封面。
 - `/artwork/:id`：作品大图查看、缩放和导览标注列表。
 - `/editor`：展厅属性编辑、墙面颜色调整、作品移动到不同展厅。
-- `/analytics`：参观在线状态、作品浏览排行、路线回放。
+- `/analytics`：本机标签页实时在线访客（心跳检测，关闭标签页 10 秒内移除）、按展厅查看访客位置、作品浏览排行、路线回放；预置访客仅作演示数据。
 
 ## 目录结构
 
@@ -41,7 +41,7 @@ frontend/src/
 ├── hooks/            # useFirstPersonController.ts, useGalleryScene.ts, useVisitorTracking.ts
 ├── pages/            # GalleryWalk, ExhibitionList, ArtworkDetail, RoomEditor, Analytics
 ├── router/           # index.tsx
-├── utils/            # threeUtils/, db.ts
+├── utils/            # threeUtils/, db.ts, presenceChannel.ts（跨标签页心跳）
 ├── constants/        # lighting.ts, frameStyles.ts
 └── styles/           # theme.css, global.css
 ```

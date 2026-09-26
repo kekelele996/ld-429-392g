@@ -15,7 +15,7 @@ export function GalleryWalk() {
   const activeArtwork = useArtworkStore((state) => state.artworks.find((artwork) => artwork.id === activeArtworkId));
   const annotation = useGuideStore((state) => state.annotations.find((item) => item.artworkId === activeArtworkId));
   const { hintVisible, velocity } = useFirstPersonController();
-  useVisitorTracking(activeArtworkId);
+  useVisitorTracking({ roomId: room?.id, artworkId: activeArtworkId });
 
   return (
     <div className="grid gap-5 xl:grid-cols-[1fr_340px]">

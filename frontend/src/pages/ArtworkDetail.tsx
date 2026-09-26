@@ -13,7 +13,7 @@ export function ArtworkDetail() {
   const artworks = useArtworkStore((state) => state.artworks);
   const annotations = useGuideStore((state) => state.annotations);
   const artwork = useMemo(() => artworks.find((item) => item.id === id), [artworks, id]);
-  useVisitorTracking(artwork?.id);
+  useVisitorTracking({ roomId: artwork?.roomId, artworkId: artwork?.id });
 
   if (!artwork) {
     return <EmptyState title="未找到作品" description="当前作品可能已经移出展览，返回展览列表继续浏览。" />;

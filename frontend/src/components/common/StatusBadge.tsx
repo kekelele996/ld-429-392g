@@ -1,9 +1,11 @@
-import { ExhibitionStatus } from '../../types/enums';
+import { ExhibitionStatus, VisitorStatus } from '../../types/enums';
 
 const styles: Record<string, string> = {
   [ExhibitionStatus.Active]: 'border-moss text-moss',
   [ExhibitionStatus.Upcoming]: 'border-ultramarine text-ultramarine',
   [ExhibitionStatus.Past]: 'border-zinc-500 text-zinc-600',
+  [VisitorStatus.InGallery]: 'border-moss text-moss',
+  [VisitorStatus.Left]: 'border-zinc-500 text-zinc-600',
 };
 
 export function StatusBadge({ status }: { status: string }) {

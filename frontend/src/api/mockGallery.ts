@@ -1,4 +1,4 @@
-import { ExhibitionStatus, FrameStyle, RoomType, VisitorStatus } from '../types/enums';
+import { ExhibitionStatus, FrameStyle, RoomType, VisitorSource, VisitorStatus } from '../types/enums';
 import type { Artwork, Exhibition, GalleryRoom, GuideAnnotation, VisitorLog } from '../types';
 import { DEFAULT_LIGHTING } from '../constants/lighting';
 
@@ -156,18 +156,26 @@ export const annotations: GuideAnnotation[] = [
 export const visitors: VisitorLog[] = [
   {
     visitorId: 'visitor-a12',
+    displayName: '演示访客·A12',
     enteredAt: new Date(Date.now() - 1000 * 60 * 14).toISOString(),
     staySeconds: 840,
     viewedArtworkIds: ['art-101', 'art-102', 'art-104'],
     currentRoomId: 'room-main',
+    currentArtworkId: 'art-104',
+    lastActiveAt: new Date(Date.now() - 1000 * 60 * 3).toISOString(),
     onlineStatus: VisitorStatus.InGallery,
+    source: VisitorSource.Preset,
   },
   {
     visitorId: 'visitor-b44',
+    displayName: '演示访客·B44',
     enteredAt: new Date(Date.now() - 1000 * 60 * 42).toISOString(),
     staySeconds: 1080,
     viewedArtworkIds: ['art-103'],
     currentRoomId: 'room-side',
+    currentArtworkId: 'art-103',
+    lastActiveAt: new Date(Date.now() - 1000 * 60 * 20).toISOString(),
     onlineStatus: VisitorStatus.Left,
+    source: VisitorSource.Preset,
   },
 ];

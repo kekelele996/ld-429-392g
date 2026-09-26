@@ -5,6 +5,7 @@ import { ExhibitionList } from '../pages/ExhibitionList';
 import { GalleryWalk } from '../pages/GalleryWalk';
 import { RoomEditor } from '../pages/RoomEditor';
 import { useThemeStore } from '../stores/themeStore';
+import { useVisitorTracking } from '../hooks/useVisitorTracking';
 
 const navItems = [
   ['展览', '/exhibitions'],
@@ -16,6 +17,7 @@ const navItems = [
 function Shell() {
   const mode = useThemeStore((state) => state.mode);
   const toggleTheme = useThemeStore((state) => state.toggleTheme);
+  useVisitorTracking();
   return (
     <div className="app-shell" data-theme={mode}>
       <header className="border-b border-[var(--color-line)] bg-[var(--color-bg)]/90">
