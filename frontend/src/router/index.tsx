@@ -4,6 +4,7 @@ import { ArtworkDetail } from '../pages/ArtworkDetail';
 import { ExhibitionList } from '../pages/ExhibitionList';
 import { GalleryWalk } from '../pages/GalleryWalk';
 import { RoomEditor } from '../pages/RoomEditor';
+import { useVisitorPresence } from '../hooks/useVisitorPresence';
 import { useThemeStore } from '../stores/themeStore';
 
 const navItems = [
@@ -16,6 +17,7 @@ const navItems = [
 function Shell() {
   const mode = useThemeStore((state) => state.mode);
   const toggleTheme = useThemeStore((state) => state.toggleTheme);
+  useVisitorPresence();
   return (
     <div className="app-shell" data-theme={mode}>
       <header className="border-b border-[var(--color-line)] bg-[var(--color-bg)]/90">
